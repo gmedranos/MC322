@@ -22,7 +22,8 @@ public class Tabuleiro {
 				}
 			}
 	}
-	
+	/* Cria uma matriz de char que representa o tabuleiro */
+
 	public char[][] apresenta() {
 		char tab_apresent[][] = new char[7][7];
 		
@@ -39,12 +40,12 @@ public class Tabuleiro {
 		return tab_apresent;
 	}
 	
-
+	/* Move uma peca no tabuleiro */
 	public void mover(int org_x, int org_y, int dest_x, int dest_y) {
-		if (tabul[org_y][org_x].movLegal(dest_x, dest_y) == false) {
+		if (tabul[org_y][org_x].movLegal(dest_x, dest_y) == false) { // Pergunta para a peca se o movimento é legal
 			return;
 		}
-		if(org_x == dest_x) {
+		if(org_x == dest_x) { // Pergunta para a peca do meio a peca origem pode fazer o movimento
 			if (dest_y > org_y && tabul[org_y + 1][org_x].mover(tabul[dest_y][dest_x]) == false)
 				return;
 			if (dest_y < org_y && tabul[org_y - 1][org_x].mover(tabul[dest_y][dest_x]) == false)
@@ -57,6 +58,7 @@ public class Tabuleiro {
 				return;
 		}
 		
+		// Altera o tabuleiro
 		tabul[dest_y][dest_x].setComida(false);
 		tabul[org_y][org_x].setComida(true);
 		

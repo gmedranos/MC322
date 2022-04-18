@@ -42,7 +42,7 @@ public class Peca {
 		this.comida = comida;
 	}
 
-	public boolean movLegal(int dest_x, int dest_y) {
+	public boolean movLegal(int dest_x, int dest_y) { // Verifica se o movimento desejado é legal, ou seja, se ele anda 2 casas na horizonatal ou vertical
 		if (posicao_x == dest_x) {
 			if(posicao_y - dest_y == 2 || posicao_y - dest_y == -2)
 				return true;
@@ -54,7 +54,7 @@ public class Peca {
 		return false;
 	}
 	
-	public boolean mover(Peca peca) {
+	public boolean mover(Peca peca) { // Verifica se a peca esta ocupada e se o destino é esta vazio
 		if (vazio == true || peca.vazio == true)
 			return false;
 		else if (comida == false && peca.comida == true)

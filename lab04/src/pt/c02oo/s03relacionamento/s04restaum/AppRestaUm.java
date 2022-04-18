@@ -5,7 +5,7 @@ public class AppRestaUm {
 		
 		AppRestaUm.executaJogo(null, null);
 	   }
-	   
+		/* Transforma uma letra em uma posicao valida para as funcoes */	   
 		private static int converteLetra(char letra) {
 			switch(letra) {
 			case 'a':
@@ -27,14 +27,14 @@ public class AppRestaUm {
 			}
 		}
 		
-	
+		/* Executa o jogo, ao ler as entradas de um arquivo .csv e realizando os movimentos necessarios */
 	   public static void executaJogo(String arquivoEntrada, String arquivoSaida) {
 		   Tabuleiro tab = new Tabuleiro();
 		   Toolkit tk = Toolkit.start(arquivoEntrada, arquivoSaida);
 	      
 	      String commands[] = tk.retrieveCommands();
 	      
-	      System.out.println("=== Primeira Saída");
+	      System.out.println("=== Primeira Saï¿½da");
 	      char board[][] = {
 	         {' ', ' ', 'P', 'P', 'P', ' ', ' '},
 	         {' ', ' ', 'P', 'P', 'P', ' ', ' '},
